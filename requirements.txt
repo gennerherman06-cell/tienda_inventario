@@ -1,3 +1,8 @@
 pytest>=9.1
 pytest-bdd>=9.0
 pytest-cov>=7.1
+pytest-benchmark>=5.3
+pytest-html>=4.2
+nox>=2026.10
+ruff>=0.17
+mutmut>=3.8

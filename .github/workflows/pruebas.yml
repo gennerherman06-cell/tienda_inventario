@@ -15,14 +15,11 @@ jobs:
           python-version: "3.13"
       - name: Instalar dependencias
         run: pip install -r requirements.txt
-      - name: Ejecutar pruebas con cobertura de líneas y ramas
-        run: pytest --cov=tienda --cov-branch --cov-report=term-missing --cov-fail-under=100 --cucumberjson=cucumber.json
-      - name: Generar reporte de aceptación
-        if: always()
-        run: python reporte_aceptacion.py cucumber.json reporte_aceptacion.html
-      - name: Guardar reporte
+      - name: Estilo, pruebas con cobertura y rendimiento (las mismas sesiones de nox que en el computador)
+        run: nox
+      - name: Guardar reportes
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: reporte-aceptacion
-          path: reporte_aceptacion.html
+          name: reportes
+          path: reportes/
