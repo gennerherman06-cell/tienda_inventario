@@ -1,3 +1,5 @@
+01479d0 Comentario de las pruebas de refuerzo
+d629eb8 Registro de commits actualizado
 5f01371 Evidencias del Laboratorio 3
 4cf088b Integración continua con las mismas sesiones de nox
 13f64bf Instrucciones del Laboratorio 3 en el README
