@@ -1,0 +1,95 @@
+GitHub Actions, flujo 'Pruebas de la tienda', ejecución #1 (run 44864985154)
+Repositorio: https://github.com/gennerherman06-cell/tienda_inventario
+Commit 4b011ff, rama main, 21 de noviembre de 2026 04:13 UTC (20 de noviembre, 23:13 en Colombia)
+Resultado: éxito en 34 s (instalar dependencias 18 s, nox 8 s)
+
+Paso: nox
+nox > Running session estilo
+nox > uv binary not found.
+nox > ruff check tienda tests reporte_aceptacion.py noxfile.py
+All checks passed!
+nox > Session estilo was successful.
+nox > Running session completas
+nox > pytest -q -p no:cacheprovider -m 'not rendimiento' --cov=tienda --cov-branch --cov-report=term-missing --cov-report=html:reportes/cobertura --cov-fail-under=100 --junitxml=reportes/junit.xml --html=reportes/pruebas.html --self-contained-html --cucumberjson=reportes/cucumber.json
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.2.0, pluggy-1.7.0
+benchmark: 5.3.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /home/runner/work/tienda_inventario/tienda_inventario
+configfile: pytest.ini
+testpaths: tests
+plugins: benchmark-5.3.1, html-4.2.0, cov-7.1.0, bdd-9.0.1, platformdirs-4.14.8, metadata-3.1.1
+collected 134 items / 5 deselected / 129 selected
+
+tests/aceptacion/test_historias_usuario.py ......                        [  4%]
+tests/aceptacion_bdd/test_historias_bdd.py .......................       [ 22%]
+tests/integracion/test_compra.py ......                                  [ 27%]
+tests/mutacion/test_refuerzo.py ...............                          [ 38%]
+tests/robustez/test_ciclo3.py ...............                            [ 50%]
+tests/unitarias/test_carrito.py ............                             [ 59%]
+tests/unitarias/test_descuentos.py ...................                   [ 74%]
+tests/unitarias/test_inventario.py ..................                    [ 88%]
+tests/unitarias/test_pasarela.py .                                       [ 89%]
+tests/unitarias/test_producto.py ..............                          [100%]
+
+- generated json file: /home/runner/work/tienda_inventario/tienda_inventario/reportes/cucumber.json -
+- generated xml file: /home/runner/work/tienda_inventario/tienda_inventario/reportes/junit.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.13.18-final-0 _______________
+
+Name                    Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------
+tienda/__init__.py          0      0      0      0   100%
+tienda/carrito.py          70      0     20      0   100%
+tienda/consecutivo.py      14      0      4      0   100%
+tienda/descuentos.py       33      0     10      0   100%
+tienda/excepciones.py       8      0      0      0   100%
+tienda/inventario.py       38      0      8      0   100%
+tienda/pasarela.py          5      0      0      0   100%
+tienda/producto.py         27      0      6      0   100%
+-------------------------------------------------------------------
+TOTAL                     195      0     48      0   100%
+Coverage HTML written to dir reportes/cobertura
+Required test coverage of 100% reached. Total coverage: 100.00%
+- Generated html report: file:///home/runner/work/tienda_inventario/tienda_inventario/reportes/pruebas.html -
+====================== 129 passed, 5 deselected in 0.79s =======================
+nox > python reporte_aceptacion.py reportes/cucumber.json reportes/aceptacion.html
+HU-01 Ver el total de la compra antes de pagar: 5 de 5 escenarios cumplen
+HU-02 Pagar el carrito: 5 de 5 escenarios cumplen
+HU-03 No vender lo que no hay: 5 de 5 escenarios cumplen
+HU-04 Saber qué pedir al proveedor: 4 de 4 escenarios cumplen
+HU-05 Registrar productos nuevos: 4 de 4 escenarios cumplen
+nox > Session completas was successful in 2 seconds.
+nox > Running session rendimiento
+nox > pytest -q -p no:cacheprovider -m rendimiento --benchmark-columns=min,mean,median,max,rounds --benchmark-sort=mean --benchmark-json=reportes/rendimiento.json
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.2.0, pluggy-1.7.0
+benchmark: 5.3.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /home/runner/work/tienda_inventario/tienda_inventario
+configfile: pytest.ini
+testpaths: tests
+plugins: benchmark-5.3.1, html-4.2.0, cov-7.1.0, bdd-9.0.1, platformdirs-4.14.8, metadata-3.1.1
+collected 134 items / 129 deselected / 5 selected
+
+tests/rendimiento/test_rendimiento.py .....                              [100%]
+Wrote benchmark data in: reportes/rendimiento.json
+
+
+
+-------------------------------------------------------------------- benchmark: 4 tests --------------------------------------------------------------------
+Name (time in ns)                                            Min                    Mean                  Median                       Max            Rounds
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_costo_de_guardar_la_numeracion[en_memoria]         120.7200 (1.0)          137.0849 (1.0)          134.8500 (1.0)            831.9500 (1.0)       82217
+test_factura_de_un_carrito_con_50_productos          15,078.0000 (124.90)    15,886.7799 (115.89)    15,640.0000 (115.98)      65,333.0000 (78.53)     22696
+test_cobro_de_una_venta_de_10_productos              39,364.0000 (326.08)    46,399.8000 (338.47)    42,199.0000 (312.93)     479,128.0000 (575.91)      200
+test_costo_de_guardar_la_numeracion[en_archivo]     117,529.0000 (973.57)   228,738.6994 (>1000.0)  208,889.0000 (>1000.0)  4,909,989.0000 (>1000.0)    9060
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Legend:
+  Outliers: 1 Standard Deviation from Mean; 1.5 IQR (InterQuartile Range) from 1st Quartile and 3rd Quartile.
+  OPS: Operations Per Second, computed as 1 / Mean
+====================== 5 passed, 129 deselected in 4.36s =======================
+nox > Session rendimiento was successful in 4 seconds.
+nox > Ran 3 sessions in 7 seconds:
+nox > * estilo: success
+nox > * completas: success, took 2 seconds
+nox > * rendimiento: success, took 4 seconds
