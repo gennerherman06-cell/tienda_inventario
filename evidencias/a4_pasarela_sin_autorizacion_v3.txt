@@ -1,0 +1,2 @@
+Comprobante: VENTA-00001 | autorización: None | total: 10710
+Stock de LEC01 después de la venta: 22

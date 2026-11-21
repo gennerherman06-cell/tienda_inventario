@@ -1,0 +1,12 @@
+#!/bin/sh
+# Gancho de git (Laboratorio 3): antes de cada commit revisa el estilo y corre
+# las pruebas rápidas. Si algo falla, el commit no se hace.
+echo "== Revisando el commit con nox (estilo y pruebas rápidas) =="
+nox -s estilo rapidas
+estado=$?
+if [ $estado -ne 0 ]; then
+    echo ""
+    echo "COMMIT RECHAZADO: hay errores de estilo o pruebas fallando. Corríjalos y vuelva a intentar."
+    exit 1
+fi
+echo "Todo en orden: el commit sigue."

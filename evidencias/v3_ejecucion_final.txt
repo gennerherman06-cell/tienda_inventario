@@ -1,0 +1,124 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 
+rootdir: tienda_inventario
+configfile: pytest.ini
+testpaths: tests
+plugins: platformdirs-4.13.5, anyio-4.15.1, bdd-9.0.1, cov-7.1.0
+collecting ... collected 99 items
+
+tests/aceptacion/test_historias_usuario.py::test_hu01_cliente_regular_ve_su_total_sin_descuento PASSED [  1%]
+tests/aceptacion/test_historias_usuario.py::test_hu01_cliente_frecuente_con_compra_grande_recibe_el_maximo_descuento PASSED [  2%]
+tests/aceptacion/test_historias_usuario.py::test_hu02_pago_aprobado_entrega_comprobante PASSED [  3%]
+tests/aceptacion/test_historias_usuario.py::test_hu02_pago_rechazado_conserva_carrito_y_mercancia PASSED [  4%]
+tests/aceptacion/test_historias_usuario.py::test_hu03_no_se_vende_mas_de_lo_que_hay PASSED [  5%]
+tests/aceptacion/test_historias_usuario.py::test_hu04_administrador_ve_alerta_de_reposicion_despues_de_vender PASSED [  6%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-2 LEC01, 1 PAN01-16800-0-3192-19992] PASSED [  7%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[frecuente-2 LEC01, 1 PAN01-16800-840-3032-18992] PASSED [  8%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-7 ARZ01, 2 PAN01-190600-0-36214-226814] PASSED [  9%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-8 ARZ01-200000-20000-34200-214200] PASSED [ 10%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[frecuente-1 TV001-1800000-270000-290700-1820700] PASSED [ 11%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_pago_aprobado_entrega_comprobante_y_descuenta_el_inventario PASSED [ 12%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_pago_rechazado_conserva_el_carrito_y_la_mercancía_y_se_puede_reintentar PASSED [ 13%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_no_se_puede_pagar_un_carrito_vacío PASSED [ 14%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_el_comprobante_muestra_qué_se_compró PASSED [ 15%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_un_pago_rechazado_no_deja_huecos_en_la_numeración_de_ventas PASSED [ 16%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_se_pueden_agregar_las_unidades_que_quedan_hasta_la_última PASSED [ 17%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_no_se_puede_pasar_del_stock_sumando_lo_que_ya_está_en_el_carrito PASSED [ 18%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_el_aviso_le_dice_al_cliente_cuántas_unidades_puede_agregar_todavía PASSED [ 19%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_un_código_que_no_existe_se_rechaza_sin_tocar_el_carrito PASSED [ 20%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_si_ya_tiene_todo_el_stock_en_el_carrito_el_aviso_se_lo_dice PASSED [ 21%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_un_producto_entra_en_la_lista_de_reposición_después_de_vender PASSED [ 22%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_un_producto_que_llega_justo_a_su_mínimo_ya_se_debe_pedir PASSED [ 23%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_al_llegar_mercancía_el_producto_sale_de_la_lista PASSED [ 24%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_una_venta_con_pago_rechazado_no_dispara_la_alerta PASSED [ 25%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_registro_de_un_producto_con_el_código_escrito_en_minúsculas_y_con_espacios PASSED [ 26%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_datos_que_el_sistema_no_debe_aceptar[PAN01-Pan integral-8500-5-Ya existe un producto con c\xf3digo PAN01] PASSED [ 27%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_datos_que_el_sistema_no_debe_aceptar[CAF01-Caf\xe9 500 g-0-5-El precio debe ser un entero mayor que cero] PASSED [ 28%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_datos_que_el_sistema_no_debe_aceptar[CAF01-Caf\xe9 500 g-18000--1-El stock no puede ser negativo] PASSED [ 29%]
+tests/integracion/test_compra.py::test_compra_exitosa_descuenta_inventario_y_cobra_el_total PASSED [ 30%]
+tests/integracion/test_compra.py::test_pago_rechazado_no_modifica_el_inventario PASSED [ 31%]
+tests/integracion/test_compra.py::test_no_se_puede_pagar_un_carrito_vacio PASSED [ 32%]
+tests/integracion/test_compra.py::test_dos_compras_seguidas_tienen_referencias_distintas PASSED [ 33%]
+tests/integracion/test_compra.py::test_venta_agota_producto_y_lo_marca_para_reposicion PASSED [ 34%]
+tests/integracion/test_compra.py::test_si_otro_cliente_compra_antes_no_se_cobra PASSED [ 35%]
+tests/unitarias/test_carrito.py::test_subtotal_con_varios_productos PASSED [ 36%]
+tests/unitarias/test_carrito.py::test_tipo_de_cliente_invalido PASSED    [ 37%]
+tests/unitarias/test_carrito.py::test_agregar_con_cantidad_invalida[0] PASSED [ 38%]
+tests/unitarias/test_carrito.py::test_agregar_con_cantidad_invalida[-2] PASSED [ 39%]
+tests/unitarias/test_carrito.py::test_agregar_con_cantidad_invalida[1.5] PASSED [ 40%]
+tests/unitarias/test_carrito.py::test_agregar_con_cantidad_invalida[True] PASSED [ 41%]
+tests/unitarias/test_carrito.py::test_agregar_producto_que_no_existe PASSED [ 42%]
+tests/unitarias/test_carrito.py::test_agregar_exactamente_el_stock_disponible PASSED [ 43%]
+tests/unitarias/test_carrito.py::test_agregar_una_unidad_mas_que_el_stock PASSED [ 44%]
+tests/unitarias/test_carrito.py::test_estado_del_carrito_al_agregar_y_quitar PASSED [ 45%]
+tests/unitarias/test_carrito.py::test_no_permite_acumular_mas_unidades_que_el_stock PASSED [ 46%]
+tests/unitarias/test_carrito.py::test_factura_del_carrito_aplica_descuento_de_cliente_frecuente PASSED [ 47%]
+tests/unitarias/test_descuentos.py::test_caminos_de_porcentaje_descuento[100000-regular-esperado0-ning\xfan if se cumple] PASSED [ 48%]
+tests/unitarias/test_descuentos.py::test_caminos_de_porcentaje_descuento[300000-regular-esperado1-solo se cumple el if del monto] PASSED [ 49%]
+tests/unitarias/test_descuentos.py::test_caminos_de_porcentaje_descuento[100000-frecuente-esperado2-solo se cumple el if de cliente frecuente] PASSED [ 50%]
+tests/unitarias/test_descuentos.py::test_caminos_de_porcentaje_descuento[300000-frecuente-esperado3-se cumplen ambos y se aplica el tope] PASSED [ 51%]
+tests/unitarias/test_descuentos.py::test_rama_de_validacion_de_subtotal[-1] PASSED [ 52%]
+tests/unitarias/test_descuentos.py::test_rama_de_validacion_de_subtotal[1.5] PASSED [ 53%]
+tests/unitarias/test_descuentos.py::test_rama_de_validacion_de_subtotal[1000] PASSED [ 54%]
+tests/unitarias/test_descuentos.py::test_rama_de_validacion_de_tipo_de_cliente PASSED [ 55%]
+tests/unitarias/test_descuentos.py::test_el_tope_nunca_se_supera_aunque_cambien_las_reglas PASSED [ 56%]
+tests/unitarias/test_descuentos.py::test_umbral_de_descuento_por_monto[199999-esperado0] PASSED [ 57%]
+tests/unitarias/test_descuentos.py::test_umbral_de_descuento_por_monto[200000-esperado1] PASSED [ 58%]
+tests/unitarias/test_descuentos.py::test_umbral_de_descuento_por_monto[200001-esperado2] PASSED [ 59%]
+tests/unitarias/test_descuentos.py::test_umbral_de_descuento_por_monto[0-esperado3] PASSED [ 60%]
+tests/unitarias/test_descuentos.py::test_calculo_de_iva_con_redondeo_comercial[100000-19000] PASSED [ 61%]
+tests/unitarias/test_descuentos.py::test_calculo_de_iva_con_redondeo_comercial[0-0] PASSED [ 62%]
+tests/unitarias/test_descuentos.py::test_calculo_de_iva_con_redondeo_comercial[50-10] PASSED [ 63%]
+tests/unitarias/test_descuentos.py::test_calculo_de_iva_con_redondeo_comercial[49-9] PASSED [ 64%]
+tests/unitarias/test_descuentos.py::test_iva_rechaza_base_negativa PASSED [ 65%]
+tests/unitarias/test_descuentos.py::test_factura_completa_de_cliente_frecuente_con_compra_grande PASSED [ 66%]
+tests/unitarias/test_inventario.py::test_agregar_y_obtener_producto PASSED [ 67%]
+tests/unitarias/test_inventario.py::test_no_permite_codigos_duplicados PASSED [ 68%]
+tests/unitarias/test_inventario.py::test_obtener_codigo_inexistente[NOEXISTE] PASSED [ 69%]
+tests/unitarias/test_inventario.py::test_obtener_codigo_inexistente[] PASSED [ 70%]
+tests/unitarias/test_inventario.py::test_obtener_codigo_inexistente[None] PASSED [ 71%]
+tests/unitarias/test_inventario.py::test_valor_total_del_inventario PASSED [ 72%]
+tests/unitarias/test_inventario.py::test_cantidades_invalidas_en_entrada_y_salida[0] PASSED [ 73%]
+tests/unitarias/test_inventario.py::test_cantidades_invalidas_en_entrada_y_salida[-1] PASSED [ 74%]
+tests/unitarias/test_inventario.py::test_cantidades_invalidas_en_entrada_y_salida[2.5] PASSED [ 75%]
+tests/unitarias/test_inventario.py::test_cantidades_invalidas_en_entrada_y_salida[3] PASSED [ 76%]
+tests/unitarias/test_inventario.py::test_cantidades_invalidas_en_entrada_y_salida[True] PASSED [ 77%]
+tests/unitarias/test_inventario.py::test_salida_en_los_limites_validos[1-4] PASSED [ 78%]
+tests/unitarias/test_inventario.py::test_salida_en_los_limites_validos[4-1] PASSED [ 79%]
+tests/unitarias/test_inventario.py::test_salida_en_los_limites_validos[5-0] PASSED [ 80%]
+tests/unitarias/test_inventario.py::test_salida_una_unidad_por_encima_del_stock PASSED [ 81%]
+tests/unitarias/test_inventario.py::test_estado_del_stock_tras_entradas_y_salidas PASSED [ 82%]
+tests/unitarias/test_inventario.py::test_lista_de_reposicion_cambia_con_las_ventas PASSED [ 83%]
+tests/unitarias/test_inventario.py::test_inventario_nuevo_esta_vacio PASSED [ 84%]
+tests/unitarias/test_pasarela.py::test_pasarela_real_no_disponible_en_entorno_de_pruebas PASSED [ 85%]
+tests/unitarias/test_producto.py::test_crea_producto_valido_y_normaliza_codigo PASSED [ 86%]
+tests/unitarias/test_producto.py::test_rechaza_datos_invalidos[-Arroz-1000-1-0] PASSED [ 87%]
+tests/unitarias/test_producto.py::test_rechaza_datos_invalidos[   -Arroz-1000-1-0] PASSED [ 88%]
+tests/unitarias/test_producto.py::test_rechaza_datos_invalidos[A1--1000-1-0] PASSED [ 89%]
+tests/unitarias/test_producto.py::test_rechaza_datos_invalidos[A1-Arroz-0-1-0] PASSED [ 90%]
+tests/unitarias/test_producto.py::test_rechaza_datos_invalidos[A1-Arroz--5-1-0] PASSED [ 91%]
+tests/unitarias/test_producto.py::test_rechaza_datos_invalidos[A1-Arroz-10.5-1-0] PASSED [ 92%]
+tests/unitarias/test_producto.py::test_rechaza_datos_invalidos[A1-Arroz-1000--1-0] PASSED [ 93%]
+tests/unitarias/test_producto.py::test_rechaza_datos_invalidos[A1-Arroz-1000-1--1] PASSED [ 94%]
+tests/unitarias/test_producto.py::test_requiere_reposicion_en_los_limites[4-3-False] PASSED [ 95%]
+tests/unitarias/test_producto.py::test_requiere_reposicion_en_los_limites[3-3-True] PASSED [ 96%]
+tests/unitarias/test_producto.py::test_requiere_reposicion_en_los_limites[2-3-True] PASSED [ 97%]
+tests/unitarias/test_producto.py::test_requiere_reposicion_en_los_limites[0-0-True] PASSED [ 98%]
+tests/unitarias/test_producto.py::test_precio_minimo_aceptado_es_un_peso PASSED [100%]
+
+- generated json file: evidencias/v3_cucumber.json -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.13.18-final-0 _______________
+
+Name                    Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------
+tienda/__init__.py          0      0      0      0   100%
+tienda/carrito.py          64      0     18      0   100%
+tienda/descuentos.py       32      0     10      0   100%
+tienda/excepciones.py       7      0      0      0   100%
+tienda/inventario.py       38      0      8      0   100%
+tienda/pasarela.py          5      0      0      0   100%
+tienda/producto.py         25      0     10      0   100%
+-------------------------------------------------------------------
+TOTAL                     171      0     46      0   100%
+============================== 99 passed in 0.33s ==============================

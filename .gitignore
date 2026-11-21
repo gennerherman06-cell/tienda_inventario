@@ -1,0 +1,6 @@
+__pycache__/
+.coverage
+.nox/
+mutants/
+reportes/
+.benchmarks/

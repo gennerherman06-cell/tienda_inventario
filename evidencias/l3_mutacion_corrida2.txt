@@ -1,0 +1,13 @@
+mutmut 3.8.1 sobre la versión 4 (con tests/mutacion/test_refuerzo.py)
+Mutantes generados: 277 | muertos: 268 | sobrevivientes: 9 | puntaje: 96,8 %
+
+Sobrevivientes (todos equivalentes):
+tienda.consecutivo.xǁContadorVentasǁ__init____mutmut_10: survived
+tienda.consecutivo.xǁContadorVentasǁ__init____mutmut_12: survived
+tienda.consecutivo.xǁContadorVentasǁconfirmar__mutmut_5: survived
+tienda.consecutivo.xǁContadorVentasǁconfirmar__mutmut_7: survived
+tienda.consecutivo.xǁContadorVentasǁconfirmar__mutmut_12: survived
+tienda.descuentos.x_porcentaje_descuento__mutmut_18: survived
+tienda.carrito.xǁCarritoǁquitar__mutmut_4: survived
+tienda.carrito.xǁCarritoǁcantidad_de__mutmut_7: survived
+tienda.inventario.xǁInventarioǁobtener__mutmut_4: survived

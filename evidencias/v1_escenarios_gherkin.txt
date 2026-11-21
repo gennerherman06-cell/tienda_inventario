@@ -1,0 +1,72 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 
+rootdir: tienda_inventario
+configfile: pytest.ini
+plugins: platformdirs-4.13.5, anyio-4.15.1, bdd-9.0.1, cov-7.1.0
+collecting ... collected 23 items
+
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-2 LEC01, 1 PAN01-16800-0-3192-19992] PASSED [  4%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[frecuente-2 LEC01, 1 PAN01-16800-840-3032-18992] PASSED [  8%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-7 ARZ01, 2 PAN01-190600-0-36214-226814] PASSED [ 13%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-8 ARZ01-200000-20000-34200-214200] FAILED [ 17%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[frecuente-1 TV001-1800000-270000-290700-1820700] PASSED [ 21%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_pago_aprobado_entrega_comprobante_y_descuenta_el_inventario PASSED [ 26%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_pago_rechazado_conserva_el_carrito_y_la_mercancía_y_se_puede_reintentar FAILED [ 30%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_no_se_puede_pagar_un_carrito_vacío PASSED [ 34%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_el_comprobante_muestra_qué_se_compró FAILED [ 39%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_un_pago_rechazado_no_deja_huecos_en_la_numeración_de_ventas FAILED [ 43%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_se_pueden_agregar_las_unidades_que_quedan_hasta_la_última PASSED [ 47%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_no_se_puede_pasar_del_stock_sumando_lo_que_ya_está_en_el_carrito FAILED [ 52%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_el_aviso_le_dice_al_cliente_cuántas_unidades_puede_agregar_todavía FAILED [ 56%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_un_código_que_no_existe_se_rechaza_sin_tocar_el_carrito PASSED [ 60%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_si_ya_tiene_todo_el_stock_en_el_carrito_el_aviso_se_lo_dice FAILED [ 65%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_un_producto_entra_en_la_lista_de_reposición_después_de_vender PASSED [ 69%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_un_producto_que_llega_justo_a_su_mínimo_ya_se_debe_pedir PASSED [ 73%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_al_llegar_mercancía_el_producto_sale_de_la_lista PASSED [ 78%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_una_venta_con_pago_rechazado_no_dispara_la_alerta FAILED [ 82%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_registro_de_un_producto_con_el_código_escrito_en_minúsculas_y_con_espacios PASSED [ 86%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_datos_que_el_sistema_no_debe_aceptar[PAN01-Pan integral-8500-5-Ya existe un producto con c\xf3digo PAN01] PASSED [ 91%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_datos_que_el_sistema_no_debe_aceptar[CAF01-Caf\xe9 500 g-0-5-El precio debe ser un entero mayor que cero] PASSED [ 95%]
+tests/aceptacion_bdd/test_historias_bdd.py::test_datos_que_el_sistema_no_debe_aceptar[CAF01-Caf\xe9 500 g-18000--1-El stock no puede ser negativo] PASSED [100%]
+
+=================================== FAILURES ===================================
+E   AssertionError: assert (200000, 0, 38000, 238000) == (200000, 20000, 34200, 214200)
+      
+      At index 1 diff: 0 != 20000
+      
+      Full diff:
+        (
+            200000,
+      +     0,...
+      
+      ...Full output truncated (8 lines hidden), use '-vv' to show
+tests/aceptacion_bdd/test_historias_bdd.py:164: AssertionError: assert (200000, 0, 38000, 238000) == (200000, 20000, 34200, 214200)
+E   tienda.excepciones.StockInsuficiente: Stock insuficiente de TV001: hay 1, se piden 1
+tienda/inventario.py:41: tienda.excepciones.StockInsuficiente: Stock insuficiente de TV001: hay 1, se piden 1
+E   AssertionError: El comprobante no trae el detalle de productos
+    assert None is not None
+tests/aceptacion_bdd/test_historias_bdd.py:210: AssertionError: El comprobante no trae el detalle de productos
+E   AssertionError: Hay un hueco: VENTA-00004 y VENTA-00006
+    assert 6 == (4 + 1)
+tests/aceptacion_bdd/test_historias_bdd.py:218: AssertionError: Hay un hueco: VENTA-00004 y VENTA-00006
+E   AssertionError: Se esperaba un rechazo y la operación se aceptó
+    assert None is not None
+tests/aceptacion_bdd/test_historias_bdd.py:196: AssertionError: Se esperaba un rechazo y la operación se aceptó
+E   AssertionError: Se esperaba un rechazo y la operación se aceptó
+    assert None is not None
+tests/aceptacion_bdd/test_historias_bdd.py:190: AssertionError: Se esperaba un rechazo y la operación se aceptó
+E   AssertionError: Se esperaba un rechazo y la operación se aceptó
+    assert None is not None
+tests/aceptacion_bdd/test_historias_bdd.py:190: AssertionError: Se esperaba un rechazo y la operación se aceptó
+E   AssertionError: assert 'PAN01' not in {'PAN01'}
+tests/aceptacion_bdd/test_historias_bdd.py:228: AssertionError: assert 'PAN01' not in {'PAN01'}
+=========================== short test summary info ============================
+FAILED tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-8 ARZ01-200000-20000-34200-214200]
+FAILED tests/aceptacion_bdd/test_historias_bdd.py::test_pago_rechazado_conserva_el_carrito_y_la_mercancía_y_se_puede_reintentar
+FAILED tests/aceptacion_bdd/test_historias_bdd.py::test_el_comprobante_muestra_qué_se_compró
+FAILED tests/aceptacion_bdd/test_historias_bdd.py::test_un_pago_rechazado_no_deja_huecos_en_la_numeración_de_ventas
+FAILED tests/aceptacion_bdd/test_historias_bdd.py::test_no_se_puede_pasar_del_stock_sumando_lo_que_ya_está_en_el_carrito
+FAILED tests/aceptacion_bdd/test_historias_bdd.py::test_el_aviso_le_dice_al_cliente_cuántas_unidades_puede_agregar_todavía
+FAILED tests/aceptacion_bdd/test_historias_bdd.py::test_si_ya_tiene_todo_el_stock_en_el_carrito_el_aviso_se_lo_dice
+FAILED tests/aceptacion_bdd/test_historias_bdd.py::test_una_venta_con_pago_rechazado_no_dispara_la_alerta
+========================= 8 failed, 15 passed in 0.09s =========================

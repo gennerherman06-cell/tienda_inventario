@@ -1,0 +1,5 @@
+Tiempo total de pared (incluye arrancar Python e importar pytest), mediana de 5 corridas
+Serie, sin rendimiento                                  mediana  0.60 s (mín 0.56, máx 0.66)  -> 129 passed, 5 deselected in 0.15s
+Paralelo -n 2, sin rendimiento                          mediana  1.23 s (mín 1.12, máx 1.29)  -> 129 passed in 0.72s
+Serie, solo rendimiento                                 mediana  3.46 s (mín 3.01, máx 3.62)  -> 5 passed, 129 deselected in 3.00s
+Gancho de commit (-x, sin rendimiento, sin cobertura)   mediana  0.65 s (mín 0.55, máx 0.69)  -> 129 passed, 5 deselected in 0.20s

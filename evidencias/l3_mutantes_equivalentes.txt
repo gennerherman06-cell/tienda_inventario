@@ -1,0 +1,27 @@
+== tienda.consecutivo.xǁContadorVentasǁ__init____mutmut_10
+-        self._ultima = json.loads(self._ruta.read_text(encoding="utf-8"))["ultima_venta"]
++        self._ultima = json.loads(self._ruta.read_text(encoding=None))["ultima_venta"]
+== tienda.consecutivo.xǁContadorVentasǁ__init____mutmut_12
+-        self._ultima = json.loads(self._ruta.read_text(encoding="utf-8"))["ultima_venta"]
++        self._ultima = json.loads(self._ruta.read_text(encoding="UTF-8"))["ultima_venta"]
+== tienda.consecutivo.xǁContadorVentasǁconfirmar__mutmut_5
+-        self._ruta.write_text(json.dumps({"ultima_venta": self._ultima}), encoding="utf-8")
++        self._ruta.write_text(json.dumps({"ultima_venta": self._ultima}), encoding=None)
+== tienda.consecutivo.xǁContadorVentasǁconfirmar__mutmut_7
+-        self._ruta.write_text(json.dumps({"ultima_venta": self._ultima}), encoding="utf-8")
++        self._ruta.write_text(json.dumps({"ultima_venta": self._ultima}), )
+== tienda.consecutivo.xǁContadorVentasǁconfirmar__mutmut_12
+-        self._ruta.write_text(json.dumps({"ultima_venta": self._ultima}), encoding="utf-8")
++        self._ruta.write_text(json.dumps({"ultima_venta": self._ultima}), encoding="UTF-8")
+== tienda.descuentos.x_porcentaje_descuento__mutmut_18
+-        porcentaje += PORCENTAJE_POR_MONTO
++        porcentaje = PORCENTAJE_POR_MONTO
+== tienda.carrito.xǁCarritoǁquitar__mutmut_4
+-    clave = (codigo or "").strip().upper()
++    clave = (codigo or "XXXX").strip().upper()
+== tienda.carrito.xǁCarritoǁcantidad_de__mutmut_7
+-    return self._items.get((codigo or "").strip().upper(), 0)
++    return self._items.get((codigo or "XXXX").strip().upper(), 0)
+== tienda.inventario.xǁInventarioǁobtener__mutmut_4
+-    clave = (codigo or "").strip().upper()
++    clave = (codigo or "XXXX").strip().upper()

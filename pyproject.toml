@@ -1,0 +1,11 @@
+[tool.mutmut]
+source_paths = ["tienda/"]
+tests_dir = ["tests/"]
+also_copy = ["pytest.ini"]
+
+[tool.ruff]
+line-length = 110
+extend-exclude = ["mutants"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "I"]

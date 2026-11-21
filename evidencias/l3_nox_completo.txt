@@ -1,0 +1,88 @@
+nox > Running session estilo
+nox > ruff check tienda tests reporte_aceptacion.py noxfile.py
+All checks passed!
+nox > Session estilo was successful in a second.
+nox > Running session completas
+nox > pytest -q -p no:cacheprovider -m 'not rendimiento' --cov=tienda --cov-branch --cov-report=term-missing --cov-report=html:reportes/cobertura --cov-fail-under=100 --junitxml=reportes/junit.xml --html=reportes/pruebas.html --self-contained-html --cucumberjson=reportes/cucumber.json
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0
+benchmark: 5.3.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /home/claude/lab3/tienda_inventario
+configfile: pytest.ini
+testpaths: tests
+plugins: platformdirs-4.13.5, anyio-4.15.1, bdd-9.0.1, cov-7.1.0, xdist-3.8.0, metadata-3.1.1, benchmark-5.3.1, html-4.2.0
+collected 134 items / 5 deselected / 129 selected
+
+tests/aceptacion/test_historias_usuario.py ......                        [  4%]
+tests/aceptacion_bdd/test_historias_bdd.py .......................       [ 22%]
+tests/integracion/test_compra.py ......                                  [ 27%]
+tests/mutacion/test_refuerzo.py ...............                          [ 38%]
+tests/robustez/test_ciclo3.py ...............                            [ 50%]
+tests/unitarias/test_carrito.py ............                             [ 59%]
+tests/unitarias/test_descuentos.py ...................                   [ 74%]
+tests/unitarias/test_inventario.py ..................                    [ 88%]
+tests/unitarias/test_pasarela.py .                                       [ 89%]
+tests/unitarias/test_producto.py ..............                          [100%]
+
+- generated json file: reportes/cucumber.json -
+-- generated xml file: reportes/junit.xml --
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.13.18-final-0 _______________
+
+Name                    Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------
+tienda/__init__.py          0      0      0      0   100%
+tienda/carrito.py          70      0     20      0   100%
+tienda/consecutivo.py      14      0      4      0   100%
+tienda/descuentos.py       33      0     10      0   100%
+tienda/excepciones.py       8      0      0      0   100%
+tienda/inventario.py       38      0      8      0   100%
+tienda/pasarela.py          5      0      0      0   100%
+tienda/producto.py         27      0      6      0   100%
+-------------------------------------------------------------------
+TOTAL                     195      0     48      0   100%
+Coverage HTML written to dir reportes/cobertura
+Required test coverage of 100% reached. Total coverage: 100.00%
+- Generated html report: file://reportes/pruebas.html -
+====================== 129 passed, 5 deselected in 0.41s =======================
+nox > python reporte_aceptacion.py reportes/cucumber.json reportes/aceptacion.html
+HU-01 Ver el total de la compra antes de pagar: 5 de 5 escenarios cumplen
+HU-02 Pagar el carrito: 5 de 5 escenarios cumplen
+HU-03 No vender lo que no hay: 5 de 5 escenarios cumplen
+HU-04 Saber qué pedir al proveedor: 4 de 4 escenarios cumplen
+HU-05 Registrar productos nuevos: 4 de 4 escenarios cumplen
+nox > Session completas was successful in a second.
+nox > Running session rendimiento
+nox > pytest -q -p no:cacheprovider -m rendimiento --benchmark-columns=min,mean,median,max,rounds --benchmark-sort=mean --benchmark-json=reportes/rendimiento.json
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0
+benchmark: 5.3.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /home/claude/lab3/tienda_inventario
+configfile: pytest.ini
+testpaths: tests
+plugins: platformdirs-4.13.5, anyio-4.15.1, bdd-9.0.1, cov-7.1.0, xdist-3.8.0, metadata-3.1.1, benchmark-5.3.1, html-4.2.0
+collected 134 items / 129 deselected / 5 selected
+
+tests/rendimiento/test_rendimiento.py .....                              [100%]
+Wrote benchmark data in: reportes/rendimiento.json
+
+
+
+-------------------------------------------------------------------- benchmark: 4 tests -------------------------------------------------------------------
+Name (time in ns)                                           Min                    Mean                  Median                       Max            Rounds
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+test_costo_de_guardar_la_numeracion[en_memoria]         49.3400 (1.0)           69.6230 (1.0)           63.5000 (1.0)         15,560.0600 (1.0)      188041
+test_factura_de_un_carrito_con_50_productos          7,198.0000 (145.89)     8,817.3079 (126.64)     8,524.0000 (134.24)     246,195.0000 (15.82)     31134
+test_cobro_de_una_venta_de_10_productos             18,159.0000 (368.04)    25,023.4700 (359.41)    20,505.5000 (322.92)     517,884.0000 (33.28)       200
+test_costo_de_guardar_la_numeracion[en_archivo]     81,780.0000 (>1000.0)  150,154.6963 (>1000.0)  127,755.5000 (>1000.0)  4,389,401.0000 (282.09)     7586
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Legend:
+  Outliers: 1 Standard Deviation from Mean; 1.5 IQR (InterQuartile Range) from 1st Quartile and 3rd Quartile.
+  OPS: Operations Per Second, computed as 1 / Mean
+====================== 5 passed, 129 deselected in 3.71s =======================
+nox > Session rendimiento was successful in 4 seconds.
+nox > Ran 3 sessions in 6 seconds:
+nox > * estilo: success, took a second
+nox > * completas: success, took a second
+nox > * rendimiento: success, took 4 seconds

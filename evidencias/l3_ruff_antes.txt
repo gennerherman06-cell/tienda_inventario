@@ -1,0 +1,17 @@
+tests/aceptacion/test_historias_usuario.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+tests/aceptacion_bdd/test_historias_bdd.py:76:18: B905 `zip()` without an explicit `strict=` parameter
+tests/conftest.py:2:1: I001 [*] Import block is un-sorted or un-formatted
+tests/integracion/test_compra.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+tests/mutacion/test_refuerzo.py:95:111: E501 Line too long (115 > 110)
+tests/rendimiento/test_rendimiento.py:29:111: E501 Line too long (113 > 110)
+tests/robustez/test_ciclo3.py:89:5: I001 [*] Import block is un-sorted or un-formatted
+tests/unitarias/test_carrito.py:2:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unitarias/test_descuentos.py:2:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unitarias/test_inventario.py:2:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unitarias/test_inventario.py:82:5: E731 Do not assign a `lambda` expression, use a `def`
+tests/unitarias/test_pasarela.py:5:1: I001 [*] Import block is un-sorted or un-formatted
+tests/unitarias/test_producto.py:2:1: I001 [*] Import block is un-sorted or un-formatted
+tienda/descuentos.py:9:1: I001 [*] Import block is un-sorted or un-formatted
+tienda/producto.py:2:1: I001 [*] Import block is un-sorted or un-formatted
+Found 15 errors.
+[*] 11 fixable with the `--fix` option (2 hidden fixes can be enabled with the `--unsafe-fixes` option).

@@ -1,0 +1,77 @@
+mutmut 3.8.1 sobre la versión 4 (antes de las pruebas de refuerzo)
+Mutantes generados: 277 | muertos: 212 | sobrevivientes: 65 | puntaje: 76,5 %
+
+Sobrevivientes por categoría:
+40 mensaje
+    tienda.producto.xǁProductoǁ__post_init____mutmut_4
+    tienda.producto.xǁProductoǁ__post_init____mutmut_5
+    tienda.producto.xǁProductoǁ__post_init____mutmut_6
+    tienda.producto.xǁProductoǁ__post_init____mutmut_7
+    tienda.producto.xǁProductoǁ__post_init____mutmut_11
+    tienda.producto.xǁProductoǁ__post_init____mutmut_12
+    tienda.producto.xǁProductoǁ__post_init____mutmut_13
+    tienda.producto.xǁProductoǁ__post_init____mutmut_14
+    tienda.descuentos.x_porcentaje_descuento__mutmut_8
+    tienda.descuentos.x_porcentaje_descuento__mutmut_9
+    tienda.descuentos.x_porcentaje_descuento__mutmut_10
+    tienda.descuentos.x_porcentaje_descuento__mutmut_11
+    tienda.descuentos.x_porcentaje_descuento__mutmut_13
+    tienda.descuentos.x_calcular_iva__mutmut_6
+    tienda.descuentos.x_calcular_iva__mutmut_7
+    tienda.descuentos.x_calcular_iva__mutmut_8
+    tienda.descuentos.x_calcular_iva__mutmut_9
+    tienda.carrito.xǁCarritoǁ__init____mutmut_4
+    tienda.carrito.xǁCarritoǁagregar__mutmut_7
+    tienda.carrito.xǁCarritoǁagregar__mutmut_8
+    tienda.carrito.xǁCarritoǁagregar__mutmut_9
+    tienda.carrito.xǁCarritoǁagregar__mutmut_10
+    tienda.carrito.xǁCarritoǁconfirmar_compra__mutmut_10
+    tienda.carrito.xǁCarritoǁconfirmar_compra__mutmut_19
+    tienda.carrito.xǁCarritoǁconfirmar_compra__mutmut_20
+    tienda.carrito.xǁCarritoǁconfirmar_compra__mutmut_21
+    tienda.carrito.xǁCarritoǁconfirmar_compra__mutmut_22
+    tienda.carrito.xǁCarritoǁconfirmar_compra__mutmut_26
+    tienda.carrito.xǁCarritoǁconfirmar_compra__mutmut_27
+    tienda.carrito.xǁCarritoǁconfirmar_compra__mutmut_28
+    tienda.carrito.xǁCarritoǁconfirmar_compra__mutmut_29
+    tienda.inventario.xǁInventarioǁregistrar_salida__mutmut_5
+    tienda.inventario.xǁInventarioǁ_validar_cantidad__mutmut_6
+    tienda.inventario.xǁInventarioǁ_validar_cantidad__mutmut_7
+    tienda.inventario.xǁInventarioǁ_validar_cantidad__mutmut_8
+    tienda.inventario.xǁInventarioǁ_validar_cantidad__mutmut_9
+    tienda.pasarela.xǁPasarelaPagoǁcobrar__mutmut_1
+    tienda.pasarela.xǁPasarelaPagoǁcobrar__mutmut_2
+    tienda.pasarela.xǁPasarelaPagoǁcobrar__mutmut_3
+    tienda.pasarela.xǁPasarelaPagoǁcobrar__mutmut_4
+9 equivalente
+    tienda.consecutivo.xǁContadorVentasǁ__init____mutmut_10
+    tienda.consecutivo.xǁContadorVentasǁ__init____mutmut_12
+    tienda.consecutivo.xǁContadorVentasǁconfirmar__mutmut_5
+    tienda.consecutivo.xǁContadorVentasǁconfirmar__mutmut_7
+    tienda.consecutivo.xǁContadorVentasǁconfirmar__mutmut_12
+    tienda.descuentos.x_porcentaje_descuento__mutmut_18
+    tienda.carrito.xǁCarritoǁquitar__mutmut_4
+    tienda.carrito.xǁCarritoǁcantidad_de__mutmut_7
+    tienda.inventario.xǁInventarioǁobtener__mutmut_4
+7 valor por defecto
+    tienda.descuentos.x_porcentaje_descuento__mutmut_1
+    tienda.descuentos.x_porcentaje_descuento__mutmut_2
+    tienda.descuentos.x_valor_descuento__mutmut_1
+    tienda.descuentos.x_valor_descuento__mutmut_2
+    tienda.descuentos.x_total_a_pagar__mutmut_1
+    tienda.descuentos.x_total_a_pagar__mutmut_2
+    tienda.carrito.xǁCarritoǁagregar__mutmut_1
+3 hueco: cantidad_de sin producto
+    tienda.carrito.xǁCarritoǁcantidad_de__mutmut_2
+    tienda.carrito.xǁCarritoǁcantidad_de__mutmut_4
+    tienda.carrito.xǁCarritoǁcantidad_de__mutmut_8
+2 hueco: redondeo
+    tienda.descuentos.x__redondear__mutmut_3
+    tienda.descuentos.x__redondear__mutmut_5
+2 hueco: precio_unitario
+    tienda.carrito.xǁCarritoǁdetalle__mutmut_11
+    tienda.carrito.xǁCarritoǁdetalle__mutmut_12
+1 hueco: validación de nombre
+    tienda.producto.xǁProductoǁ__post_init____mutmut_8
+1 hueco: contador sin archivo
+    tienda.consecutivo.xǁContadorVentasǁ__init____mutmut_3
