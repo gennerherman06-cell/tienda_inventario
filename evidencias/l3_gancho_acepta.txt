@@ -1,0 +1,37 @@
+$ git commit -am "Instrucciones del Laboratorio 3 en el README"
+== Revisando el commit con nox (estilo y pruebas rápidas) ==
+nox > Running session estilo
+nox > ruff check tienda tests reporte_aceptacion.py noxfile.py
+All checks passed!
+nox > Session estilo was successful.
+nox > Running session rapidas
+nox > pytest -q -x -p no:cacheprovider -m 'not rendimiento'
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0
+benchmark: 5.3.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /home/claude/lab3/tienda_inventario
+configfile: pytest.ini
+testpaths: tests
+plugins: platformdirs-4.13.5, anyio-4.15.1, bdd-9.0.1, cov-7.1.0, xdist-3.8.0, metadata-3.1.1, benchmark-5.3.1, html-4.2.0
+collected 134 items / 5 deselected / 129 selected
+
+tests/aceptacion/test_historias_usuario.py ......                        [  4%]
+tests/aceptacion_bdd/test_historias_bdd.py .......................       [ 22%]
+tests/integracion/test_compra.py ......                                  [ 27%]
+tests/mutacion/test_refuerzo.py ...............                          [ 38%]
+tests/robustez/test_ciclo3.py ...............                            [ 50%]
+tests/unitarias/test_carrito.py ............                             [ 59%]
+tests/unitarias/test_descuentos.py ...................                   [ 74%]
+tests/unitarias/test_inventario.py ..................                    [ 88%]
+tests/unitarias/test_pasarela.py .                                       [ 89%]
+tests/unitarias/test_producto.py ..............                          [100%]
+
+====================== 129 passed, 5 deselected in 0.23s =======================
+nox > Session rapidas was successful.
+nox > Ran 2 sessions:
+nox > * estilo: success
+nox > * rapidas: success
+Todo en orden: el commit sigue.
+[main 13f64bf] Instrucciones del Laboratorio 3 en el README
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+(código de salida: 0)

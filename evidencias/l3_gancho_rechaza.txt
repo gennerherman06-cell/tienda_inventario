@@ -1,0 +1,73 @@
+$ git commit -am "Ajuste en el cálculo de descuentos"
+== Revisando el commit con nox (estilo y pruebas rápidas) ==
+nox > Running session estilo
+nox > ruff check tienda tests reporte_aceptacion.py noxfile.py
+All checks passed!
+nox > Session estilo was successful.
+nox > Running session rapidas
+nox > pytest -q -x -p no:cacheprovider -m 'not rendimiento'
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0
+benchmark: 5.3.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /home/claude/lab3/tienda_inventario
+configfile: pytest.ini
+testpaths: tests
+plugins: platformdirs-4.13.5, anyio-4.15.1, bdd-9.0.1, cov-7.1.0, xdist-3.8.0, metadata-3.1.1, benchmark-5.3.1, html-4.2.0
+collected 134 items / 5 deselected / 129 selected
+
+tests/aceptacion/test_historias_usuario.py ......                        [  4%]
+tests/aceptacion_bdd/test_historias_bdd.py ...F
+
+=================================== FAILURES ===================================
+_ test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-8 ARZ01-200000-20000-34200-214200] _
+
+fixturefunc = <function verificar_factura at 0x7f93826291c0>
+request = <FixtureRequest for <Function test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-8 ARZ01-200000-20000-34200-214200]>>
+kwargs = {'subtotal': 200000, 'descuento': 20000, 'iva': 34200, 'total': 214200, ...}
+
+    def call_fixture_func(
+        fixturefunc: _FixtureFunc[FixtureValue], request: FixtureRequest, kwargs
+    ) -> FixtureValue:
+        if inspect.isgeneratorfunction(fixturefunc):
+            fixturefunc = cast(Callable[..., Generator[FixtureValue]], fixturefunc)
+            generator = fixturefunc(**kwargs)
+            try:
+                fixture_result = next(generator)
+            except StopIteration:
+                raise ValueError(f"{request.fixturename} did not yield a value") from None
+            finalizer = functools.partial(_teardown_yield_fixture, fixturefunc, generator)
+            request.addfinalizer(finalizer)
+        else:
+            fixturefunc = cast(Callable[..., FixtureValue], fixturefunc)
+>           fixture_result = fixturefunc(**kwargs)
+                             ^^^^^^^^^^^^^^^^^^^^^
+
+/usr/local/lib/python3.13/site-packages/_pytest/fixtures.py:1005: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ctx = {'inv': <tienda.inventario.Inventario object at 0x7f93825e7150>, 'carrito': <tienda.carrito.Carrito object at 0x7f9382... 'factura': {'subtotal': 200000, 'descuento': 0, 'base_gravable': 200000, 'iva': 38000, ...}, 'comprobante': None, ...}
+subtotal = 200000, descuento = 20000, iva = 34200, total = 214200
+
+    @then(parsers.parse("la factura muestra subtotal {subtotal:d}, descuento {descuento:d}, "
+                        "IVA {iva:d} y total {total:d}"))
+    def verificar_factura(ctx, subtotal, descuento, iva, total):
+        f = ctx["factura"]
+>       assert (f["subtotal"], f["descuento"], f["iva"], f["total"]) == (subtotal, descuento, iva, total)
+E       assert (200000, 0, 38000, 238000) == (200000, 20000, 34200, 214200)
+E         
+E         At index 1 diff: 0 != 20000
+E         Use -v to get more diff
+
+tests/aceptacion_bdd/test_historias_bdd.py:164: AssertionError
+=========================== short test summary info ============================
+FAILED tests/aceptacion_bdd/test_historias_bdd.py::test_la_factura_aplica_descuento_e_iva_según_el_cliente_y_el_monto[regular-8 ARZ01-200000-20000-34200-214200]
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+================== 1 failed, 9 passed, 5 deselected in 0.10s ===================
+nox > Command pytest -q -x -p no:cacheprovider -m 'not rendimiento' failed with exit code 1
+nox > Session rapidas failed.
+nox > Ran 2 sessions:
+nox > * estilo: success
+nox > * rapidas: failed
+
+COMMIT RECHAZADO: hay errores de estilo o pruebas fallando. Corríjalos y vuelva a intentar.
+(código de salida: 1)

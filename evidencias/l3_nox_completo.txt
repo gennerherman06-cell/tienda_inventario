@@ -1,7 +1,7 @@
 nox > Running session estilo
 nox > ruff check tienda tests reporte_aceptacion.py noxfile.py
 All checks passed!
-nox > Session estilo was successful in a second.
+nox > Session estilo was successful.
 nox > Running session completas
 nox > pytest -q -p no:cacheprovider -m 'not rendimiento' --cov=tienda --cov-branch --cov-report=term-missing --cov-report=html:reportes/cobertura --cov-fail-under=100 --junitxml=reportes/junit.xml --html=reportes/pruebas.html --self-contained-html --cucumberjson=reportes/cucumber.json
 ============================= test session starts ==============================
@@ -44,7 +44,7 @@ TOTAL                     195      0     48      0   100%
 Coverage HTML written to dir reportes/cobertura
 Required test coverage of 100% reached. Total coverage: 100.00%
 - Generated html report: file://reportes/pruebas.html -
-====================== 129 passed, 5 deselected in 0.41s =======================
+====================== 129 passed, 5 deselected in 0.46s =======================
 nox > python reporte_aceptacion.py reportes/cucumber.json reportes/aceptacion.html
 HU-01 Ver el total de la compra antes de pagar: 5 de 5 escenarios cumplen
 HU-02 Pagar el carrito: 5 de 5 escenarios cumplen
@@ -71,18 +71,18 @@ Wrote benchmark data in: reportes/rendimiento.json
 -------------------------------------------------------------------- benchmark: 4 tests -------------------------------------------------------------------
 Name (time in ns)                                           Min                    Mean                  Median                       Max            Rounds
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-test_costo_de_guardar_la_numeracion[en_memoria]         49.3400 (1.0)           69.6230 (1.0)           63.5000 (1.0)         15,560.0600 (1.0)      188041
-test_factura_de_un_carrito_con_50_productos          7,198.0000 (145.89)     8,817.3079 (126.64)     8,524.0000 (134.24)     246,195.0000 (15.82)     31134
-test_cobro_de_una_venta_de_10_productos             18,159.0000 (368.04)    25,023.4700 (359.41)    20,505.5000 (322.92)     517,884.0000 (33.28)       200
-test_costo_de_guardar_la_numeracion[en_archivo]     81,780.0000 (>1000.0)  150,154.6963 (>1000.0)  127,755.5000 (>1000.0)  4,389,401.0000 (282.09)     7586
+test_costo_de_guardar_la_numeracion[en_memoria]         52.2700 (1.0)           77.9370 (1.0)           62.0100 (1.0)          9,745.0300 (1.0)       85216
+test_factura_de_un_carrito_con_50_productos          7,606.0000 (145.51)    10,853.4427 (139.26)     9,852.0000 (158.88)     553,077.0000 (56.75)     34691
+test_cobro_de_una_venta_de_10_productos             21,526.0000 (411.82)    31,527.0500 (404.52)    25,127.0000 (405.21)     881,315.0000 (90.44)       200
+test_costo_de_guardar_la_numeracion[en_archivo]     81,408.0000 (>1000.0)  159,419.4434 (>1000.0)  133,760.0000 (>1000.0)  5,826,293.0000 (597.87)     7540
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Legend:
   Outliers: 1 Standard Deviation from Mean; 1.5 IQR (InterQuartile Range) from 1st Quartile and 3rd Quartile.
   OPS: Operations Per Second, computed as 1 / Mean
-====================== 5 passed, 129 deselected in 3.71s =======================
-nox > Session rendimiento was successful in 4 seconds.
-nox > Ran 3 sessions in 6 seconds:
-nox > * estilo: success, took a second
+====================== 5 passed, 129 deselected in 3.02s =======================
+nox > Session rendimiento was successful in 3 seconds.
+nox > Ran 3 sessions in 4 seconds:
+nox > * estilo: success
 nox > * completas: success, took a second
-nox > * rendimiento: success, took 4 seconds
+nox > * rendimiento: success, took 3 seconds
