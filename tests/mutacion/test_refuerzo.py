@@ -37,8 +37,8 @@ def _pasarela(**kwargs):
 
 
 # ---------- 1. Mensajes que lee el usuario (40 mutantes) ----------
-# El Laboratorio 2 mostró con D-07 que un mensaje equivocado también es un
-# defecto. Estas pruebas revisan el texto exacto, no solo el tipo de error.
+# Con D-07 el Laboratorio 2 dejó claro que un mensaje equivocado también es un
+# defecto. Estas pruebas revisan el texto exacto del mensaje.
 
 @pytest.mark.parametrize("codigo, nombre, mensaje", [
     ("", "Pan", "El código del producto es obligatorio"),
